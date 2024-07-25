@@ -48,7 +48,7 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 TF_IN_AUTOMATION=true
 
 # Terraform initialization
-terraform init -reconfigure -input=false -backend-config="bucket=podaac-services-${tf_venue}-terraform"
+terraform init -reconfigure -input=false -backend-config="bucket=asf-bignbit-dev"
 
 if [[ "${ticket}" ]]; then
   set +e

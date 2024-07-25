@@ -115,7 +115,6 @@ data "aws_iam_policy_document" "iam_policy" {
 resource "aws_iam_role" "iam_execution" {
   name                 = "${var.prefix}_iam_execution_role"
   assume_role_policy   = data.aws_iam_policy_document.iam_assume_role_policy.json
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:policy/NGAPShRoleBoundary"
 }
 
 resource "aws_iam_role_policy" "policy_attachment" {

@@ -13,7 +13,6 @@ data "aws_iam_policy_document" "states_assume_role_policy" {
 resource "aws_iam_role" "step" {
   name                 = "${local.ec2_resources_name}-sfn-steprole"
   assume_role_policy   = data.aws_iam_policy_document.states_assume_role_policy.json
-  permissions_boundary = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:policy/NGAPShRoleBoundary"
 }
 
 data "aws_iam_policy_document" "step_policy" {
